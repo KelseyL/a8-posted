@@ -5,6 +5,7 @@
 	$bodpart = $_POST["partofthebody"];
 	$adj2 = $_POST["adjective2"];
 	$adj3 = $_POST["adjective3"];
+	$email = $_POST["email"];
 
 	var_dump($_POST);
 
@@ -12,7 +13,7 @@
 
 	$message = wordwrap($message, 70, "\r\n");
 
-	$headers = "From: nobody@whocares.com";
+	$headers = "From: nobody@whocares.com", "Reply-To:".$email;
 
 	echo mail("kelshaelaw@gmail.com", "a Madlib for you to have", $message, $headers);
 
